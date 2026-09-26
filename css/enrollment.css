@@ -1,0 +1,244 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container Styles */
+.container {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for Container */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 .icon-title {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('https://img.icons8.com/ios-filled/50/2c3e50/classroom.png') no-repeat center;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Card Styles */
+.card {
+    background: transparent;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.card h2 {
+    color: #34495e;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.card h2 .icon-available {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('https://img.icons8.com/ios-filled/50/34495e/student-male.png') no-repeat center;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+.card h2 .icon-enrolled {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('https://img.icons8.com/ios-filled/50/34495e/checked-user-male.png') no-repeat center;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background: #2c3e50;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+tr:nth-child(even) {
+    background: #f4f6f8;
+}
+
+tr:hover {
+    background: #e8ecef;
+}
+
+/* Button Styles */
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.enroll-btn {
+    background: #28a745;
+    color: #fff;
+}
+
+.enroll-btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+.enroll-btn .icon-enroll {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('https://img.icons8.com/ios-filled/50/ffffff/plus.png') no-repeat center;
+    background-size: contain;
+}
+
+.remove-btn {
+    background: #dc3545;
+    color: #fff;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+.remove-btn .icon-remove {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('https://img.icons8.com/ios-filled/50/ffffff/delete-sign.png') no-repeat center;
+    background-size: contain;
+}
+
+/* Back Link Styles */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #2980b9;
+}
+
+.back-link .icon-back {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('https://img.icons8.com/ios-filled/50/3498db/left.png') no-repeat center;
+    background-size: contain;
+    margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .action-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+
+    .action-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+}

@@ -1,0 +1,199 @@
+/* Reset and base style */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 15px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0051a2;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.logout-btn {
+    background-color: #ff4444;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #e60000;
+}
+
+/* Admin Info */
+.admin-info {
+    margin-bottom: 20px;
+}
+
+.status-online {
+    color: green;
+    font-weight: bold;
+}
+
+/* Class buttons */
+.class-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.class-btn {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.class-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dashboard options */
+#dashboard-options {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.option-card {
+    background-color: #e0f0ff;
+    border: 2px dashed #007bff;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-card:hover {
+    background-color: #cbe4fd;
+}
+
+.switch-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.switch-btn:hover {
+    background-color: #e68000;
+}
+
+/* Quiz List */
+#quiz-list h3 {
+    margin-top: 40px;
+    font-size: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+ .quiz-box {
+            background: #f4f4f4;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        .quiz-actions {
+            margin-top: 10px;
+        }
+        .quiz-actions form {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .quiz-actions button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+        }
+        .view-btn {
+            background-color: rgb(255, 51, 0);
+            color: white;
+            border: none;
+        }
+        /* ✅ Message Box Styles */
+        .status-msg {
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .status-success {
+            background-color: #e0ffe0;
+            color: green;
+        }
+        .status-error {
+            background-color: #ffe0e0;
+            color: red;
+        }
+
+/* Stats Section */
+#class-stats {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.stats-card {
+    background-color: #ffffff;
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stats-card h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.stats-card p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}

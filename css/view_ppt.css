@@ -1,0 +1,148 @@
+body {
+    background: linear-gradient(135deg, #eef2f7, #dbe9f4);
+}
+
+
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e8f0ff, #ffffff);
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* Container */
+#pdf-viewer-container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Headings */
+h2, h3 {
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+/* Canvas */
+#pdf-canvas {
+    width: 85%;
+    max-width: 1000px;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #f8f9fa;
+}
+
+#pdf-canvas:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Controls */
+#controls {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    background-color: #2471a3;
+    transform: translateY(1px);
+}
+
+/* Back Button */
+#back-btn {
+    margin-top: 30px;
+    background-color: #2471a3;
+}
+
+#back-btn:hover {
+    background-color: #2471a3;
+}
+
+/* Preview Container */
+#preview-container {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #bdc3c7;
+}
+
+#thumbnails {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 15px;
+    scrollbar-width: thin;
+}
+
+/* Slide Thumbnails */
+.slide-preview {
+    flex: 0 0 auto;
+    width: 110px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+}
+
+.slide-preview:hover {
+    border-color: #2ecc71;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #pdf-canvas {
+        width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .slide-preview {
+        width: 80px;
+    }
+
+    #pdf-viewer-container {
+        padding: 25px;
+    }
+}

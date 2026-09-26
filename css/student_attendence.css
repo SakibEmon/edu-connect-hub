@@ -1,0 +1,297 @@
+/* student_attendance.css */
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../img/07345192-5ec5-44c2-a33c-02c3ff10336b.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    margin: 0;
+    padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2c3e50;
+    position: relative;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Background Icons for Engagement */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url('https://img.icons8.com/ios/50/000000/book.png'),
+        url('https://img.icons8.com/ios/50/000000/notebook.png'),
+        url('https://img.icons8.com/ios/50/000000/graduation-cap.png');
+    background-repeat: repeat;
+    background-position: 
+        10% 20%, 
+        80% 50%, 
+        40% 80%;
+    background-size: 60px, 60px, 60px;
+    opacity: 0.05;
+    z-index: -1;
+    animation: subtle-float 20s infinite ease-in-out;
+}
+
+/* Subtle Animation for Background */
+@keyframes subtle-float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Title Styles */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+/* Filter Form */
+.filter-form {
+    background: rgba(255, 255, 255, 0.15); /* Transparent glassmorphism */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.filter-form label {
+    font-weight: 600;
+    color: #34495e;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-form label::before {
+    content: url('https://img.icons8.com/ios/18/000000/filter.png');
+    vertical-align: middle;
+}
+
+.filter-form input[type="text"],
+.filter-form input[type="date"] {
+    padding: 8px;
+    border: 2px solid #dfe6e9;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 170px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.filter-form input[type="text"]:focus,
+.filter-form input[type="date"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+.filter-form input[type="submit"] {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.filter-form input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset Link */
+.reset-link {
+    text-decoration: none;
+    color: #e74c3c;
+    font-weight: 600;
+    padding: 10px;
+    font-size: 15px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.reset-link:hover {
+    color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+td {
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+tr {
+    transition: background 0.2s ease;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+tr.present td:first-child::before {
+    content: url('https://img.icons8.com/ios/18/000000/checkmark.png');
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+tr.absent td:first-child::before {
+    content: url('https://img.icons8.com/ios/18/000000/cancel.png');
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+tr.present {
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+tr.absent {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+    }
+
+    .filter-form input[type="text"],
+    .filter-form input[type="date"] {
+        width: 100%;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .filter-form input[type="submit"],
+    .reset-link,
+    .back-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .filter-form {
+        padding: 10px;
+    }
+
+    .filter-form input[type="text"],
+    .filter-form input[type="date"] {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .filter-form input[type="submit"],
+    .reset-link,
+    .back-btn {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,335 @@
+/* student_course_view.css */
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e6f0fa 0%, #c3e0f5 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2c3e50;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Icons for Engagement */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url('https://img.icons8.com/ios/50/000000/book.png'),
+        url('https://img.icons8.com/ios/50/000000/notebook.png'),
+        url('https://img.icons8.com/ios/50/000000/graduation-cap.png');
+    background-repeat: repeat;
+    background-position: 
+        15% 25%, 
+        75% 55%, 
+        45% 85%;
+    background-size: 80px, 80px, 80px;
+    opacity: 0.03;
+    z-index: -1;
+    animation: subtle-float 25s infinite ease-in-out;
+}
+
+/* Subtle Animation for Background */
+@keyframes subtle-float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Title Styles */
+h2 {
+    text-align: center;
+    color: #1a3c5e;
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+/* Card Styles */
+.card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.15); /* Transparent background */
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    backdrop-filter: blur(8px); /* Glassmorphism effect */
+    padding: 25px;
+    position: relative;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Study Materials Card Specific Enhancements */
+.card:first-child {
+    border-color: #27ae60; /* Green border for Study Materials */
+}
+
+.card:first-child:hover {
+    border-color: #219d52;
+}
+
+.card:first-child h3::after {
+    background: #27ae60; /* Green underline for Study Materials */
+}
+
+.card:first-child li {
+    background: rgba(39, 174, 96, 0.05); /* Subtle green tint */
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.card:first-child li:hover {
+    background: rgba(39, 174, 96, 0.1);
+    transform: translateX(5px);
+}
+
+/* Add Icon Before Study Material Names */
+.card:first-child .file-name::before {
+    content: url('https://img.icons8.com/ios/18/000000/document.png'); /* Smaller icon */
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Card Title */
+.card h3 {
+    font-size: 1.5rem;
+    color: #1a3c5e;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.card:hover h3::after {
+    width: 80px;
+}
+
+/* List Styles */
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+/* File/Quiz Names */
+.file-name, .quiz-topic {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2c3e50;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0; /* Allow text to truncate properly */
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+/* Button Styles */
+.download-btn, .view-btn, .attend-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.download-btn {
+    background: #27ae60;
+    color: #fff;
+    border: 1px solid #219d52;
+}
+
+.download-btn:hover {
+    background: #219d52;
+    transform: scale(1.03);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.view-btn {
+    background: #3498db;
+    color: #fff;
+    border: 1px solid #2980b9;
+}
+
+.view-btn:hover {
+    background: #2980b9;
+    transform: scale(1.03);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attend-btn {
+    background: #e67e22;
+    color: #fff;
+    border: 1px solid #d35400;
+}
+
+.attend-btn:hover {
+    background: #d35400;
+    transform: scale(1.03);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* No Content Message */
+.card p {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #7f8c8d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: auto;
+}
+
+.back-btn:hover {
+    background: #6c7a89;
+    transform: translateX(-5px);
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cards-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .card {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .card li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .button-container {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .download-btn, .view-btn, .attend-btn {
+        width: 100%;
+        text-align: center;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .file-name, .quiz-topic {
+        font-size: 0.85rem;
+    }
+}

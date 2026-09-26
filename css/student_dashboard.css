@@ -1,0 +1,302 @@
+/* student_dashboard.css */
+
+/* Full Background Style */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../img/07345192-5ec5-44c2-a33c-02c3ff10336b.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    margin: 0;
+    min-height: 100vh;
+    color: #2c3e50;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Animation for Subtle Effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.icons8.com/ios/50/000000/book.png'),
+                    url('https://img.icons8.com/ios/50/000000/notebook.png'),
+                    url('https://img.icons8.com/ios/50/000000/graduation-cap.png');
+    background-repeat: repeat;
+    background-position: 10% 20%, 80% 50%, 40% 80%;
+    background-size: 60px, 60px, 60px;
+    opacity: 0.05;
+    z-index: -1;
+    animation: subtle-float 20s infinite ease-in-out;
+}
+
+/* Subtle Animation for Background Icons */
+@keyframes subtle-float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Header / Banner Area */
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.hero-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+.main-heading {
+    font-size: 2.8em;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    margin: 0;
+    color: #ffffff;
+}
+
+.sub-heading {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #f1f1f1;
+    margin-top: 10px;
+}
+
+/* Container (Main Box) */
+.container {
+    max-width: 960px;
+    margin: -40px auto 40px auto;
+    padding: 30px;
+    background: transparent; /* Fully transparent background */
+    border-radius: 20px;
+    backdrop-filter: blur(12px); /* Enhanced glassmorphism effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.student-class {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #34495e;
+}
+
+/* Attendance Button */
+.attendance-button-container {
+    margin-bottom: 30px;
+}
+
+.dashboard-btn {
+    padding: 12px 25px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-btn:hover {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Courses Section */
+h2 {
+    font-size: 1.6em;
+    color: #2c3e50;
+    margin: 30px 0 20px 0;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+/* Course List */
+.course-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.course-list li {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.course-list li:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #b5f692 0%);
+}
+
+/* Add Icon Before Course Names */
+.course-list li a::before {
+    content: url('https://img.icons8.com/ios/24/000000/book.png');
+    display: block;
+    margin-bottom: 10px;
+}
+
+.course-list li a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.course-list li a:hover {
+    color: #2c3e50;
+}
+
+/* No Courses Message */
+.no-courses {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 1em;
+}
+
+/* Logout Button - Top Right Corner */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 22px;
+    background: #ff4b2b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logout-btn:hover {
+    background: #ff3a1f;
+    transform: translateY(-2px);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 2.2em;
+    }
+
+    .sub-heading {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 20px;
+        margin: -20px auto 20px auto;
+    }
+
+    .course-list {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .course-list li {
+        padding: 15px;
+    }
+
+    .course-list li a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-header {
+        height: 200px;
+    }
+
+    .main-heading {
+        font-size: 1.8em;
+    }
+
+    .sub-heading {
+        font-size: 0.9em;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .student-class {
+        font-size: 1em;
+    }
+
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+
+    .course-list li {
+        padding: 12px;
+    }
+
+    .course-list li a {
+        font-size: 0.9em;
+    }
+
+    .dashboard-btn, .logout-btn {
+        padding: 8px 18px;
+        font-size: 0.85em;
+    }
+}

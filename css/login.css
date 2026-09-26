@@ -1,0 +1,280 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-screen body styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Main container for full-screen layout */
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #fefdfd;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left section with educational background */
+.left-section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1503676260728-332c19b7735b') no-repeat center center/cover;
+  color: #ffffff;
+  padding: 40px;
+}
+
+.left-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 150, 204, 0.568);
+  z-index: 1;
+}
+
+.background-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.background-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.background-images img.active {
+  opacity: 1;
+}
+
+/* Branding section */
+.branding {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.branding h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.branding p {
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Right section with centered form */
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9fafc;
+  padding: 40px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo-box {
+  margin-bottom: 25px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: #003366;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #003366;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border: 2px solid #d1dbe8;
+  border-radius: 8px;
+}
+
+input:focus {
+  border-color: #003366;
+  box-shadow: 0 0 10px rgba(0, 51, 102, 0.15);
+  outline: none;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #003366;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  background: #003366;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #005599;
+  transform: translateY(-2px);
+}
+
+p {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+.copyright {
+  margin-top: 25px;
+  font-size: 0.85rem;
+  color: #666666;
+  font-weight: 400;
+  text-align: center;
+}
+
+a {
+  color: #003366;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left-section, .right-section {
+    flex: none;
+    width: 100%;
+    padding: 30px;
+  }
+
+  .left-section {
+    min-height: 40vh;
+  }
+
+  .branding h1 {
+    font-size: 2rem;
+  }
+
+  .branding p {
+    font-size: 1rem;
+  }
+
+  .login-container {
+    padding: 30px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  input, button {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+  }
+}

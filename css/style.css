@@ -1,0 +1,67 @@
+/* General Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header */
+h2 {
+    margin-bottom: 20px;
+    color: #23609c;
+}
+
+/* Slideshow Controls */
+#controls {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#controls button {
+    padding: 10px 20px;
+    background-color: #16a9ae;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#controls button:hover {
+    background-color: #2980b9;
+}
+
+#controls span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Canvas Container */
+canvas {
+    margin: auto;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 10px;
+}
+
+/* Error or Message */
+p {
+    color: red;
+    font-weight: bold;
+    margin-top: 60px;
+}

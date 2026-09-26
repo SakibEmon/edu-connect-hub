@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Edu Connect Hub</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script defer src="js/login.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <div class="left-section">
+      <div class="background-images">
+        <img src="https://images.unsplash.com/photo-1503676260728-332c19b7735b" alt="Educational background 1" class="active" />
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="Educational background 2" />
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655" alt="Educational background 3" />
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" alt="Educational background 4" />
+      </div>
+      <div class="branding">
+        <h1>Edu Connect Hub</h1>
+        <p>"Education is the passport to the future, for tomorrow belongs to those who prepare for it today"</p>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="login-container">
+        <div class="logo-box">
+          <img src="image/logo.png" alt="Logo" class="logo" />
+        </div>
+        <h2>Welcome Back</h2>
+        <form action="php/login.php" method="POST">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" name="password" required>
+            <span class="toggle-password" id="togglePassword">👁</span>
+          </div>
+
+          <button type="submit">Log In</button>
+          <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+        </form>
+        <p class="copyright">© All rights reserved by EDU CONNECT HUB.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // JavaScript to cycle through background images
+    const images = document.querySelectorAll('.background-images img');
+    let currentImage = 0;
+
+    setInterval(() => {
+      images[currentImage].classList.remove('active');
+      currentImage = (currentImage + 1) % images.length;
+      images[currentImage].classList.add('active');
+    }, 5000);
+  </script>
+</body>
+</html>
